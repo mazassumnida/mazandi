@@ -18,7 +18,9 @@ gevent==21.1.2
 gevent-websocket==0.10.1
 greenlet==1.1.0
 h11==0.12.0
+httpcore==0.14.2
 httptools==0.2.0
+httpx==0.21.1
 idna==3.3
 macholib==1.14
 pipenv==2020.11.15
@@ -30,6 +32,7 @@ pyinstaller-hooks-contrib==2021.2
 python-dotenv==0.19.1
 PyYAML==6.0
 requests==2.26.0
+rfc3986==1.5.0
 six==1.16.0
 sniffio==1.2.0
 starlette==0.16.0
