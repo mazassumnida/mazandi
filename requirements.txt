@@ -8,6 +8,7 @@ bottle-websocket==0.2.9
 certifi==2020.12.5
 charset-normalizer==2.0.7
 click==8.0.3
+DateTime==4.3
 distlib==0.3.1
 docopt==0.6.2
 Eel==0.12.4
@@ -30,6 +31,7 @@ pydantic==1.8.2
 pyinstaller==4.3
 pyinstaller-hooks-contrib==2021.2
 python-dotenv==0.19.1
+pytz==2021.3
 PyYAML==6.0
 requests==2.26.0
 rfc3986==1.5.0
