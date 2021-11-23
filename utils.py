@@ -17,8 +17,9 @@ def boj_rating_to_lv(rating):
 
 
 def create_solved_dict(json):
+    # TODO: 색상 정보까지 함께 반환하도록 수정
     solved_dict = {}
-    # solved.ac는 한국 시간 기준으로 매일 오전 6시에 변경되므로 UTC+3시간으로 변경
+    # solved.ac는 하루의 시작이 오전 6시이므로 UTC+3으로 변경
     today = datetime.datetime.now(pytz.timezone('Europe/Moscow'))
     # Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6
     weekday = today.isoweekday() % 7
@@ -42,3 +43,21 @@ def create_solved_dict(json):
             solved_dict[timestamp] += 1
             
     return solved_dict
+
+
+def get_starting_day():
+    # 오늘 날짜와 오늘로부터 17주 전 일요일의 날짜를 반환
+    # solved.ac는 하루의 시작이 오전 6시이므로 UTC+3으로 변경
+    today = datetime.datetime.now(pytz.timezone('Europe/Moscow'))
+    # Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6
+    weekday = today.isoweekday() % 7
+    
+    return today.strftime('%Y-%m-%d'), (today - datetime.timedelta(days=weekday + 120)).strftime('%Y-%m-%d')
+
+
+def get_tomorrow(timestamp):
+    # timestamp로부터 하루 뒤의 날짜를 반환
+    timedata = datetime.datetime.strptime(timestamp, '%Y-%m-%d')
+    tomorrow = timedata + datetime.timedelta(days=1)
+
+    return tomorrow.strftime('%Y-%m-%d')
