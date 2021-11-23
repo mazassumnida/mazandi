@@ -22,7 +22,7 @@ def create_solved_dict(json):
     today = datetime.datetime.now(pytz.timezone('Europe/Moscow'))
     # Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6
     weekday = today.isoweekday() % 7
-    print(weekday)
+
     for i, problem in enumerate(json):
         timedata = problem['timestamp'].split('.')[0].replace('T', ' ')
         trimmed_timedata = datetime.datetime.strptime(timedata, '%Y-%m-%d %H:%M:%S')
