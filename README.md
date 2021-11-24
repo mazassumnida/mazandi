@@ -1,6 +1,10 @@
 # 🌱 mazandi
 🌱 solved.ac 잔디를 예쁘게 보여주는 프로필 카드
 
+## 주의사항
+- 백준 온라인 저지가 아닌 solved.ac를 기준으로 잔디를 생성합니다.
+- 잔디의 진함 정도가 solved.ac와 다를 수 있습니다.
+
 ## install
 ```
 pip install -r requirements.txt
