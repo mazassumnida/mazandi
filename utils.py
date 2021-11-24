@@ -19,6 +19,8 @@ def boj_rating_to_lv(rating):
 def create_solved_dict(json):
     # TODO: 색상 정보까지 함께 반환하도록 수정
     solved_dict = {}
+    solved_dict['solved_max'] = 0
+    
     # solved.ac는 하루의 시작이 오전 6시이므로 UTC+3으로 변경
     today = datetime.datetime.now(pytz.timezone('Europe/Moscow'))
     # Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6
@@ -41,7 +43,10 @@ def create_solved_dict(json):
             solved_dict[timestamp] = 1
         else:
             solved_dict[timestamp] += 1
-            
+            solved_dict['solved_max'] = max(solved_dict['solved_max'], solved_dict[timestamp])
+    
+    # 18주 내 가장 많이 문제를 풀은 날의 solved count가 4 미만일 경우 4으로 설정
+    solved_dict['solved_max'] = max(solved_dict['solved_max'], 4)
     return solved_dict
 
 
