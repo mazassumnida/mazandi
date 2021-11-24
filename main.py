@@ -36,15 +36,37 @@ async def generate_bedge(handle: str, theme: Optional[str] = "warm"):
     # TODO: 잔디 그리기
     svg = """
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="350" height="170" viewBox="0 0 350 170">
+        <style type="text/css">
+            <![CDATA[
+                @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=block');
+                @keyframes fadeIn {{
+                    0% {{ opacity: 0; }}
+                    40% {{ opacity: 0; }}
+                    100% {{ opacity: 1; }}
+                }}
+                .zandi {{
+                    opacity: 0;
+                    animation: fadeIn 0.5s ease-in-out forwards;
+                }}
+                #handle {{
+                    opacity: 0;
+                    animation: fadeIn 0.5s ease-in-out forwards;
+                }}
+                #tier {{
+                    opacity: 0;
+                    animation: fadeIn 0.5s ease-in-out forwards;
+                }}
+            ]]>
+        </style>
         <defs>
             <clipPath id="clip-Gold_-_1">
             <rect width="350" height="170"/>
             </clipPath>
         </defs>
         <g id="Gold_-_1" data-name="Gold - 1" clip-path="url(#clip-Gold_-_1)">
-            <rect id="사각형_1" data-name="사각형 1" width="349.6" height="169.6" rx="14" fill="#fefefe" style="stroke-width:0.2; stroke:#d9d9d9;"/>
-            <text id="handle" transform="translate(23 32)" fill="{color}" font-size="14" font-family="NotoSansKR-Black, Noto Sans KR" font-weight="800">{handle}</text>
-            <text id="tier" data-name="tier" transform="translate(327 32)" fill="{color}" font-size="12" font-family="NotoSansKR-Black, Noto Sans KR" font-weight="800" text-anchor="end">{tier}</text>
+            <rect id="rect_1" width="349.6" height="169.6" rx="14" fill="#fefefe" style="stroke-width:0.2; stroke:#d9d9d9;"/>
+            <text id="handle" transform="translate(23 32)" fill="{color}" font-size="14" font-family="NotoSansKR-Black, Noto Sans KR" font-weight="800" style="animation-delay:100ms">{handle}</text>
+            <text id="tier" data-name="tier" transform="translate(327 32)" fill="{color}" font-size="12" font-family="NotoSansKR-Black, Noto Sans KR" font-weight="800" text-anchor="end" style="animation-delay:300ms">{tier}</text>
     """.format(handle=handle, tier=tier, color=color_theme[tier_name][4])
 
     idx = 0
@@ -60,13 +82,15 @@ async def generate_bedge(handle: str, theme: Optional[str] = "warm"):
         else:
             color = color_theme[tier_name][1]
         
-        nemo = '\n<rect id="사각형_2" data-name="사각형 2"\
+        nemo = '\n<rect class="zandi"\
                 width="15" height="15" rx="4"\
                 transform="translate({x} {y})" \
-                fill="{color}"/>\
+                fill="{color}"\
+                style="animation-delay:{delay}ms"/>\
                 '.format(x=23 + (idx // 7) * 17,
                          y=44 + (idx % 7) * 16,
-                        color= color)
+                        color=color,
+                        delay=500 + (idx % 7) * 50 + idx * 4)
         svg += nemo
         idx += 1
         # print(now_in_loop, today)
