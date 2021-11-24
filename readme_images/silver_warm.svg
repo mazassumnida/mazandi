@@ -22,14 +22,14 @@
     ]]>
   </style>
   <defs>
-    <clipPath id="clip-Gold_-_1">
+    <clipPath id="clip-Silver_-_1">
       <rect width="350" height="170"/>
     </clipPath>
   </defs>
   <g id="zandies">
     <rect id="background" width="349" height="169" rx="14" fill="#fdfdfd" style="stroke-width:0.5;stroke:#bfbfbf"/>
-    <text id="handle" transform="translate(23 32)" fill="#7B7574" font-size="14" font-family="NotoSansKR-Black, Noto Sans KR" font-weight="800" style="animation-delay:100ms">ccoco</text>
-    <text id="tier" transform="translate(327 32)" fill="#7B7574" font-size="12" font-family="NotoSansKR-Black, Noto Sans KR" font-weight="800" text-anchor="end" style="animation-delay:300ms">Gold 1</text>
+    <text id="handle" transform="translate(23 32)" fill="#7B7574" font-size="14" font-family="NotoSansKR-Black, Noto Sans KR" font-weight="800" style="animation-delay:100ms">ksa8023</text>
+    <text id="tier" transform="translate(327 32)" fill="#7B7574" font-size="12" font-family="NotoSansKR-Black, Noto Sans KR" font-weight="800" text-anchor="end" style="animation-delay:300ms">Silver 1</text>
     <rect class="zandi" width="15" height="15" rx="4" transform="translate(23 44)" fill="#F1F0F5" style="animation-delay:500ms"/>
     <rect class="zandi" width="15" height="15" rx="4" transform="translate(23 60)" fill="#DAD3DE" style="animation-delay:554ms"/>
     <rect class="zandi" width="15" height="15" rx="4" transform="translate(23 76)" fill="#DAD3DE" style="animation-delay:608ms"/>
