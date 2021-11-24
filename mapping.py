@@ -9,28 +9,28 @@ TIERS = (
     "Master"
 )
 
-BACKGROUND_COLOR_WARM = {
+COLOR_WARM = {
     'Unknown': ['#AAAAAA', '#666666', '#000000'],
     'Unrated': ['#666666', '#2D2D2D', '#040202'],
-    'Bronze': ['#F1F0F5', '#D0BCB0', '#B47F4E', '#522F15'],
-    'Silver': ['#F1F0F5', '#DAD3DE', '#ABA9AD', '#5F5865'],
-    'Gold': ['#F5F3F0', '#FDE7B4', '#FEBE70', '#F48554'],
-    'Platinum': ['#F0F5F3', '#C4FAC6', '#5AF5AD', '#00C9C9'],
-    'Diamond': ['#F1F0F5', '#D5E3FE', '#8EB9FF', '#384EC7', ],
-    'Ruby': ['#F5F3F0', '#FCC6B8', '#FC849C', '#D93841'],
-    'Master': ['#F3F0F5', '#D6F7FD', '#E1C3FF', '#FC6297'],
+    'Bronze': ['#F1F0F5', '#D0BCB0', '#B47F4E', '#522F15', '#A25B36'],
+    'Silver': ['#F1F0F5', '#DAD3DE', '#ABA9AD', '#5F5865', '#7B7574'],
+    'Gold': ['#F5F3F0', '#FDE7B4', '#FEBE70', '#F48554', '#FEBE70'],
+    'Platinum': ['#F0F5F3', '#C4FAC6', '#5AF5AD', '#00C9C9', '#34E678'],
+    'Diamond': ['#F1F0F5', '#D5E3FE', '#8EB9FF', '#384EC7', '#3F8EEA'],
+    'Ruby': ['#F5F3F0', '#FCC6B8', '#FC849C', '#D93841', '#E15C64'],
+    'Master': ['#F3F0F5', '#D6F7FD', '#E1C3FF', '#FC6297', '#CB7CEF'],
 }
 
-BACKGROUND_COLOR_COOL = {
+COLOR_COLD = {
     'Unknown': ['#AAAAAA', '#666666', '#000000'],
     'Unrated': ['#666666', '#2D2D2D', '#040202'],
-    'Bronze': ['#F1F0F5', '#C6B7AE', '#A3805E', '#5D432F'],
-    'Silver': ['#F1F0F5', '#D3D3DE', '#A1A5B2', '#585865'],
-    'Gold': ['#F5F3F0', '#FFF2AC', '#FFD972', '#EFA168'],
-    'Platinum': ['#F0F5F3', '#C6FDD9', '#5EF5C1', '#06CBE5'],
-    'Diamond': ['#F1F0F5', '#B4F8F8', '#4AC0F5', '#0065CB', ],
-    'Ruby': ['#F5F3F0', '#FCDAE4', '#F793B2', '#E51062'],
-    'Master': ['#F3F0F5', '#CCFFFD', '#D5CBFF', '#FC62B5'],
+    'Bronze': ['#F1F0F5', '#C6B7AE', '#A3805E', '#5D432F', '#A25B36'],
+    'Silver': ['#F1F0F5', '#D3D3DE', '#A1A5B2', '#585865', '#5F606A'],
+    'Gold': ['#F5F3F0', '#FFF2AC', '#FFD972', '#F5A03C', '#FDC456'],
+    'Platinum': ['#F0F5F3', '#C6FDD9', '#5EF5C1', '#06CBE5', '#39E09D'],
+    'Diamond': ['#F1F0F5', '#B4F8F8', '#4AC0F5', '#0065CB', '#1AC0F2'],
+    'Ruby': ['#F5F3F0', '#FCDAE4', '#F793B2', '#E51062', '#DB306B'],
+    'Master': ['#F3F0F5', '#CCFFFD', '#D5CBFF', '#FC62B5', '#CB7CEF'],
 }
 
 TIER_RATES = (
