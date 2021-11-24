@@ -46,7 +46,7 @@ async def generate_bedge(handle: str):
     
     idx = 0
     today, now_in_loop = get_starting_day()
-    
+    print(today, now_in_loop)
     while True:
         color = "#F5F3F0"
         if solved_dict.get(now_in_loop) != None:
@@ -56,16 +56,16 @@ async def generate_bedge(handle: str):
                 transform="translate({x} {y})" fill="{color}"/>'.format(x=23 + (idx // 7) * 17, y=44 + (idx % 7) * 16, color=color)
         svg += nemo
         idx += 1
-        print(now_in_loop, today)
-        now_in_loop = get_tomorrow(now_in_loop)
+        # print(now_in_loop, today)
         if now_in_loop == today:
             break
+        now_in_loop = get_tomorrow(now_in_loop)
     
     svg += """
         </g>
     </svg>
     """
-    print(svg)
+    
     response = Response(content=svg, media_type='image/svg+xml')
     response.headers['Cache-Control'] = 'no-cache'
     

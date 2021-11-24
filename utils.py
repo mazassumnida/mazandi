@@ -52,7 +52,7 @@ def get_starting_day():
     # Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6
     weekday = today.isoweekday() % 7
     
-    return today.strftime('%Y-%m-%d'), (today - datetime.timedelta(days=weekday + 120)).strftime('%Y-%m-%d')
+    return today.strftime('%Y-%m-%d'), (today - datetime.timedelta(days=weekday + 119)).strftime('%Y-%m-%d')
 
 
 def get_tomorrow(timestamp):
