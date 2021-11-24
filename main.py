@@ -25,12 +25,16 @@ async def generate_bedge(handle: str, theme: Optional[str] = "warm"):
     if user_info.status_code == 200 and timestamp.status_code == 200:
         user_info = user_info.json()
         timestamp = timestamp.json()
+        
         solved_dict = create_solved_dict(timestamp)
         solved_max = solved_dict['solved_max']
-    
+        
+        rating = user_info['rating']
+        tier = mapping.TIERS[boj_rating_to_lv(rating)]
+    else:
+        user_info = {'handle': handle, 'rating': 0, 'solved': 0}
+        tier = 'Unknown'
     # TODO: 색 지정
-    rating = user_info['rating']
-    tier = mapping.TIERS[boj_rating_to_lv(rating)]
     tier_name = tier.split(' ')[0]
     
     # TODO: 잔디 그리기
