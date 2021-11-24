@@ -64,7 +64,7 @@ async def generate_bedge(handle: str, theme: Optional[str] = "warm"):
             </clipPath>
         </defs>
         <g id="Gold_-_1" data-name="Gold - 1" clip-path="url(#clip-Gold_-_1)">
-            <rect id="rect_1" width="349.6" height="169.6" rx="14" fill="#fdfdfd" style="stroke-width:0.2; stroke:#bfbfbf;"/>
+            <rect id="rect_1" width="349" height="169" rx="14" fill="#fdfdfd" style="stroke-width:0.5; stroke:#bfbfbf;"/>
             <text id="handle" transform="translate(23 32)" fill="{color}" font-size="14" font-family="NotoSansKR-Black, Noto Sans KR" font-weight="800" style="animation-delay:100ms">{handle}</text>
             <text id="tier" data-name="tier" transform="translate(327 32)" fill="{color}" font-size="12" font-family="NotoSansKR-Black, Noto Sans KR" font-weight="800" text-anchor="end" style="animation-delay:300ms">{tier}</text>
     """.format(handle=handle, tier=tier, color=color_theme[tier_name][4])
