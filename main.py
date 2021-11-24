@@ -10,7 +10,6 @@ app = FastAPI()
 
 @app.get("/api")
 async def generate_bedge(handle: str, theme: Optional[str] = "warm"):
-    # api = os.environ['API_SERVER']
     api = 'https://solved.ac/api/v3/user'
     user_info_url = api + '/show?handle=' + handle
     timestamp_url = api + '/history?handle=' + handle + '&topic=solvedCount'
@@ -34,10 +33,8 @@ async def generate_bedge(handle: str, theme: Optional[str] = "warm"):
     else:
         user_info = {'handle': handle, 'rating': 0, 'solved': 0}
         tier = 'Unknown'
-    # TODO: 색 지정
     tier_name = tier.split(' ')[0]
     
-    # TODO: 잔디 그리기
     svg = """
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="350" height="170" viewBox="0 0 350 170">
         <style type="text/css">
@@ -67,15 +64,15 @@ async def generate_bedge(handle: str, theme: Optional[str] = "warm"):
             <rect width="350" height="170"/>
             </clipPath>
         </defs>
-        <g id="Gold_-_1" data-name="Gold - 1" clip-path="url(#clip-Gold_-_1)">
-            <rect id="rect_1" width="349" height="169" rx="14" fill="#fdfdfd" style="stroke-width:0.5; stroke:#bfbfbf;"/>
+        <g id="zandies">
+            <rect id="background" width="349" height="169" rx="14" fill="#fdfdfd" style="stroke-width:0.5; stroke:#bfbfbf;"/>
             <text id="handle" transform="translate(23 32)" fill="{color}" font-size="14" font-family="NotoSansKR-Black, Noto Sans KR" font-weight="800" style="animation-delay:100ms">{handle}</text>
-            <text id="tier" data-name="tier" transform="translate(327 32)" fill="{color}" font-size="12" font-family="NotoSansKR-Black, Noto Sans KR" font-weight="800" text-anchor="end" style="animation-delay:300ms">{tier}</text>
+            <text id="tier" transform="translate(327 32)" fill="{color}" font-size="12" font-family="NotoSansKR-Black, Noto Sans KR" font-weight="800" text-anchor="end" style="animation-delay:300ms">{tier}</text>
     """.format(handle=handle, tier=tier, color=color_theme[tier_name][4])
 
     idx = 0
     today, now_in_loop = get_starting_day()
-    # print(today, now_in_loop)
+
     while True:
         if not solved_dict.get(now_in_loop):
             color = color_theme[tier_name][0]
@@ -97,7 +94,7 @@ async def generate_bedge(handle: str, theme: Optional[str] = "warm"):
                         delay=500 + (idx % 7) * 50 + idx * 4)
         svg += nemo
         idx += 1
-        # print(now_in_loop, today)
+
         if now_in_loop == today:
             break
         now_in_loop = get_tomorrow(now_in_loop)
