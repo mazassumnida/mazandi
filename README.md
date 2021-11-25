@@ -50,4 +50,4 @@ uvicorn main:app --reload
 ![](https://github.com/mazassumnida/mazandi/blob/main/readme_images/silver_cold.svg)
 
 
-![](http://mazandi.herokuapp.com/api?handle=Lawali&theme=cold)
+![](http://mazandi.herokuapp.com/api?handle=jhnah917&theme=cold)
