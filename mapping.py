@@ -9,6 +9,17 @@ TIERS = (
     "Master"
 )
 
+TIER_RATES = (
+    0, # unranked
+    30, 60, 90, 120, 150, # bronze
+    200, 300, 400, 500, 650, # silver
+    800, 950, 1100, 1250, 1400, # gold
+    1600, 1750, 1900, 2000, 2100, # platinum
+    2200, 2300, 2400, 2500, 2600, # diamond
+    2700, 2800, 2850, 2900, 2950, # ruby
+    3000 # master
+)
+
 COLOR_WARM = {
     'Unknown': ['#AAAAAA', '#666666', '#000000', '#000000', '#000000'],
     'Unrated': ['#666666', '#2D2D2D', '#040202', '#040202', '#040202'],
@@ -33,13 +44,12 @@ COLOR_COLD = {
     'Master': ['#F3F0F5', '#CCFFFD', '#D5CBFF', '#FC62B5', '#CB7CEF'],
 }
 
-TIER_RATES = (
-    0, # unranked
-    30, 60, 90, 120, 150, # bronze
-    200, 300, 400, 500, 650, # silver
-    800, 950, 1100, 1250, 1400, # gold
-    1600, 1750, 1900, 2000, 2100, # platinum
-    2200, 2300, 2400, 2500, 2600, # diamond
-    2700, 2800, 2850, 2900, 2950, # ruby
-    3000 # master
-)
+DEFAULT_COLOR = "warm"
+
+COLORS = {
+    "warm": COLOR_WARM,
+    "cold": COLOR_COLD,
+}
+
+def get_colors(color: str) -> dict:
+    return COLORS[color] if color in COLORS else COLORS[DEFAULT_COLOR]

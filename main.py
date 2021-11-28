@@ -9,13 +9,13 @@ import mapping
 app = FastAPI()
 
 @app.get("/api")
-async def generate_bedge(handle: str, theme: Optional[str] = "warm"):
+async def generate_bedge(handle: str, theme: Optional[str] = mapping.DEFAULT_COLOR):
     api = 'https://solved.ac/api/v3/user'
-    user_info_url = api + '/show?handle=' + handle
-    timestamp_url = api + '/history?handle=' + handle + '&topic=solvedCount'
+    user_info_url = f'{api}/show?handle={handle}'
+    timestamp_url = f'{api}/history?handle={handle}&topic=solvedCount'
     solved_dict = {}
     solved_max = 0
-    color_theme = mapping.COLOR_COLD if theme == "cold" else mapping.COLOR_WARM
+    color_theme = mapping.get_colors(theme)
     
     async with AsyncClient() as client:
         user_info = await client.get(user_info_url)
@@ -33,6 +33,7 @@ async def generate_bedge(handle: str, theme: Optional[str] = "warm"):
     else:
         user_info = {'handle': handle, 'rating': 0, 'solved': 0}
         tier = 'Unknown'
+        
     tier_name = tier.split(' ')[0]
     
     svg = """
