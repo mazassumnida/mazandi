@@ -9,7 +9,11 @@ TIERS = (
     "Master"
 )
 
-COLOR_WARM = {
+THEMES = {
+  # THEME: {TIER: [color1, color2, color3, color4, text-color], ...}
+  'WARM': {
+    'border': '#bfbfbf',
+    'background': '#fdfdfd',
     'Unknown': ['#AAAAAA', '#666666', '#000000', '#000000', '#000000'],
     'Unrated': ['#666666', '#2D2D2D', '#040202', '#040202', '#040202'],
     'Bronze': ['#F1F0F5', '#D0BCB0', '#B47F4E', '#522F15', '#A25B36'],
@@ -19,9 +23,10 @@ COLOR_WARM = {
     'Diamond': ['#F1F0F5', '#D5E3FE', '#8EB9FF', '#384EC7', '#3F8EEA'],
     'Ruby': ['#F5F3F0', '#FCC6B8', '#FC849C', '#D93841', '#E15C64'],
     'Master': ['#F3F0F5', '#D6F7FD', '#E1C3FF', '#FC6297', '#CB7CEF'],
-}
-
-COLOR_COLD = {
+  },
+  'COLD': {
+    'border': '#bfbfbf',
+    'background': '#fdfdfd',
     'Unknown': ['#AAAAAA', '#666666', '#000000', '#000000', '#000000'],
     'Unrated': ['#666666', '#2D2D2D', '#040202', '#040202', '#040202'],
     'Bronze': ['#F1F0F5', '#C6B7AE', '#A3805E', '#5D432F', '#A25B36'],
@@ -31,6 +36,20 @@ COLOR_COLD = {
     'Diamond': ['#F1F0F5', '#B4F8F8', '#4AC0F5', '#0065CB', '#1AC0F2'],
     'Ruby': ['#F5F3F0', '#FCDAE4', '#F793B2', '#E51062', '#DB306B'],
     'Master': ['#F3F0F5', '#CCFFFD', '#D5CBFF', '#FC62B5', '#CB7CEF'],
+  },
+  'DARK': {
+    'border': '#5c5c5c',
+    'background': '#3f3f3f',
+    'Unknown': ['#2f2f2f', '#2f2f2f', '#2f2f2f', '#2f2f2f', '#afafaf'],
+    'Unrated': ['#3a3a3a', '#2f2f2f', '#1f1f1f', '#0f0f0f', '#dddddd'],
+    'Bronze': ['#48423c', '#5e4d3c', '#a16b36', '#d57618', '#bb7027'],
+    'Silver': ['#494b4c', '#6e6f72', '#969899', '#ccd1d3', '#94989b'],
+    'Gold': ['#584c3d', '#706c57', '#978046', '#df9239', '#FDC456'],
+    'Platinum': ['#3a5d52', '#358369', '#2fa57e', '#27e2a4', '#39E09D'],
+    'Diamond': ['#515055', '#4d6683', '#5489a3', '#57bcec', '#1AC0F2'],
+    'Ruby': ['#64464e', '#925a69', '#c96684', '#e74778', '#f5457b'],
+    'Master': ['#4e465b', '#715679', '#5c9caa', '#FF7CA8', '#CB7CEF'],
+  }
 }
 
 TIER_RATES = (
