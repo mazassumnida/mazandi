@@ -1,7 +1,6 @@
 from typing import Optional
 from fastapi import FastAPI, Response
 from httpx import AsyncClient
-import uvicorn
 
 from utils import create_solved_dict, boj_rating_to_lv, get_starting_day, get_tomorrow, get_tier_name
 from randoms import random_user, random_timestamp
@@ -141,5 +140,3 @@ async def generate_random_badge(
   response.headers['Cache-Control'] = 'no-cache'
 
   return response
-
-uvicorn.run(app, host="0.0.0.0", port="8080")
