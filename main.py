@@ -15,7 +15,9 @@ async def generate_bedge(handle: str, theme: Optional[str] = "warm"):
     timestamp_url = api + '/history?handle=' + handle + '&topic=solvedCount'
     solved_dict = {}
     solved_max = 0
-    color_theme = mapping.COLOR_COLD if theme == "cold" else mapping.COLOR_WARM
+    # 테마 색상표 (기본값: WARM)
+    theme = theme if theme.upper() in mapping.THEMES else 'warm'
+    color_theme = mapping.THEMES[theme.upper()]
     
     async with AsyncClient() as client:
         user_info = await client.get(user_info_url)
@@ -65,10 +67,16 @@ async def generate_bedge(handle: str, theme: Optional[str] = "warm"):
             </clipPath>
         </defs>
         <g id="zandies">
-            <rect id="background" width="349" height="169" rx="14" fill="#fdfdfd" style="stroke-width:0.5; stroke:#bfbfbf;"/>
+            <rect id="background" width="349" height="169" rx="14" fill="{bgcolor}" style="stroke-width:0.5; stroke:{border};"/>
             <text id="handle" transform="translate(23 32)" fill="{color}" font-size="14" font-family="NotoSansKR-Black, Noto Sans KR" font-weight="800" style="animation-delay:100ms">{handle}</text>
             <text id="tier" transform="translate(327 32)" fill="{color}" font-size="12" font-family="NotoSansKR-Black, Noto Sans KR" font-weight="800" text-anchor="end" style="animation-delay:300ms">{tier}</text>
-    """.format(handle=handle, tier=tier, color=color_theme[tier_name][4])
+    """.format(
+      handle=handle,
+      tier=tier,
+      color=color_theme[tier_name][4],
+      border=color_theme['border'],
+      bgcolor=color_theme['background']
+    )
 
     idx = 0
     today, now_in_loop = get_starting_day()
