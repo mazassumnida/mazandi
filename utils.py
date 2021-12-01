@@ -65,3 +65,26 @@ def get_tomorrow(timestamp):
     tomorrow = timedata + datetime.timedelta(days=1)
 
     return tomorrow.strftime('%Y-%m-%d')
+
+
+# solved.ac에서 사용하는 티어 id (0:Unrated, 1~5:Bronze, ..., 31:Master)
+def get_tier_name(id: int):
+  if id == 0: return 'Unrated'
+  lut = ['Bronze', 'Silver', 'Gold', 'Platinum', 'Diamond', 'Ruby', 'Master']
+  tier = lut[(id - 1) // 5]
+  lv = ((id - 1) % 5) + 1
+  if tier == 'Master': return 'Master'
+  return '{tier} {lv}'.format(tier=tier, lv=lv)
+
+
+# 티어명을 solved.ac에서 사용하는 티어 id로 변환 ('Bronze 4' => 2)
+def get_tier_id(name: str):
+  name = name.lower()
+  arr = name.split(' ') + [None] # padding when level is empty
+  tier = arr[0]
+  lv = int(arr[1]) if arr[1] else 0
+  lut = ['bronze', 'silver', 'gold', 'platinum', 'diamond', 'ruby', 'master']
+  if tier in lut:
+    if tier == 'master': return 31
+    return lut.index(tier) * 5 + lv
+  return 0 # unrated
