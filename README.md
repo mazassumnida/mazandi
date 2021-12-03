@@ -51,3 +51,22 @@ uvicorn main:app --reload
 
 
 ![](http://mazandi.herokuapp.com/api?handle=jhnah917&theme=cold)
+
+
+### Theme - Dark
+```
+![mazandi profile](http://mazandi.herokuapp.com/api?handle={handle}&theme=dark)
+```
+```
+<img src="http://mazandi.herokuapp.com/api?handle={handle}&theme=dark"/>
+```
+![mazandi profile](http://mazandi.herokuapp.com/api?handle=joonas&theme=dark)
+![mazandi profile](http://mazandi.herokuapp.com/api?handle=whaeun25&theme=dark)
+
+![mazandi profile](http://mazandi.herokuapp.com/api?handle=ohhamma&theme=dark)
+![mazandi profile](http://mazandi.herokuapp.com/api?handle=pichulia&theme=dark)
+
+![mazandi profile](http://mazandi.herokuapp.com/api/random?tier=silver&theme=dark)
+![mazandi profile](http://mazandi.herokuapp.com/api/random?tier=bronze&theme=dark)
+
+![](http://mazandi.herokuapp.com/api?handle=jhnah917&theme=dark)
