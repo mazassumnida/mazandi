@@ -21,7 +21,7 @@ uvicorn main:app --reload
 ```
 
 ![mazandi profile](http://mazandi.herokuapp.com/api?handle=djs100201)
-![mazandi profile](http://mazandi.herokuapp.com/api?handle=songfox00)
+![mazandi profile](http://mazandi.herokuapp.com/api/random?tier=platinum&theme=warm)
 
 ![mazandi profile](http://mazandi.herokuapp.com/api?handle=ohhamma)
 ![mazandi profile](http://mazandi.herokuapp.com/api?handle=pichulia)
@@ -41,7 +41,7 @@ uvicorn main:app --reload
 <img src="http://mazandi.herokuapp.com/api?handle={handle}&theme=cold"/>
 ```
 ![mazandi profile](http://mazandi.herokuapp.com/api?handle=swoon&theme=cold)
-![mazandi profile](http://mazandi.herokuapp.com/api?handle=whaeun25&theme=cold)
+![mazandi profile](http://mazandi.herokuapp.com/api/random?tier=platinum&theme=cold)
 
 ![mazandi profile](http://mazandi.herokuapp.com/api?handle=ohhamma&theme=cold)
 ![mazandi profile](http://mazandi.herokuapp.com/api?handle=pichulia&theme=cold)
@@ -61,7 +61,7 @@ uvicorn main:app --reload
 <img src="http://mazandi.herokuapp.com/api?handle={handle}&theme=dark"/>
 ```
 ![mazandi profile](http://mazandi.herokuapp.com/api?handle=joonas&theme=dark)
-![mazandi profile](http://mazandi.herokuapp.com/api?handle=whaeun25&theme=dark)
+![mazandi profile](http://mazandi.herokuapp.com/api/random?tier=platinum&theme=dark)
 
 ![mazandi profile](http://mazandi.herokuapp.com/api?handle=ohhamma&theme=dark)
 ![mazandi profile](http://mazandi.herokuapp.com/api?handle=pichulia&theme=dark)
