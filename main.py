@@ -6,7 +6,6 @@ from utils import create_solved_dict, boj_rating_to_lv, get_starting_day, get_to
 from randoms import random_user, random_timestamp
 import mapping
 
-
 app = FastAPI()
 
 def make_heatmap_svg(handle: str, tier: str, solved_dict: dict, color_theme: dict):
@@ -58,11 +57,16 @@ def make_heatmap_svg(handle: str, tier: str, solved_dict: dict, color_theme: dic
   today, now_in_loop = get_starting_day()
 
   while True:
+      # solved.ac streak specs:
+      # n := clamp (solved_max) to [4, 50]
+      # [1, 0.1n), [0.1n, 0.3n), [0.3n, 0.6n), [0.6n, 1.0n]
       if not solved_dict.get(now_in_loop):
           color = color_theme[tier_name][0]
-      elif (solved_dict[now_in_loop] / solved_max) > 0.667:
+      elif (solved_dict[now_in_loop]) >= ((solved_max * 6 + 9) // 10):
+          color = color_theme[tier_name][4]
+      elif (solved_dict[now_in_loop]) >= ((solved_max * 3 + 9) // 10):
           color = color_theme[tier_name][3]
-      elif (solved_dict[now_in_loop] / solved_max) > 0.334:
+      elif (solved_dict[now_in_loop]) >= ((solved_max * 1 + 9) // 10):
           color = color_theme[tier_name][2]
       else:
           color = color_theme[tier_name][1]
