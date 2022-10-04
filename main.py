@@ -59,7 +59,7 @@ def make_heatmap_svg(handle: str, tier: str, solved_dict: dict, color_theme: dic
   while True:
       # solved.ac streak specs:
       # n := clamp (solved_max) to [4, 50]
-      # [1, 0.1n), [0.1n, 0.3n), [0.3n, 0.6n), [0.6n, 1.0n]
+      # [0, 0], [1, 0.1n), [0.1n, 0.3n), [0.3n, 0.6n), [0.6n, 1.0n] -- all values are rounded up
       if not solved_dict.get(now_in_loop):
           color = color_theme[tier_name][0]
       elif (solved_dict[now_in_loop]) >= ((solved_max * 6 + 9) // 10):
