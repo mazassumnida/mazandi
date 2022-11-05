@@ -46,6 +46,8 @@ def create_solved_dict(json):
             solved_dict[timestamp] += 1
             solved_dict['solved_max'] = max(solved_dict['solved_max'], solved_dict[timestamp])
             
+    solved_dict['solved_max'] = min(solved_dict['solved_max'], 50)
+
     return solved_dict
 
 
