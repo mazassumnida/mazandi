@@ -17,7 +17,6 @@ def boj_rating_to_lv(rating):
 
 
 def create_solved_dict(json):
-    # TODO: 색상 정보까지 함께 반환하도록 수정
     solved_dict = {}
     # 18주 내 가장 많이 문제를 풀은 날의 solved count가 4 미만일 경우 4으로 설정
     solved_dict['solved_max'] = 4

@@ -48,7 +48,7 @@ def make_heatmap_svg(handle: str, tier: str, solved_dict: dict, color_theme: dic
   """.format(
     handle=handle,
     tier=tier,
-    color=color_theme[tier_name][4],
+    color=color_theme[tier_name][5],
     border=color_theme['border'],
     bgcolor=color_theme['background']
   )
@@ -66,7 +66,7 @@ def make_heatmap_svg(handle: str, tier: str, solved_dict: dict, color_theme: dic
           color = color_theme[tier_name][4]
       elif (solved_dict[now_in_loop]) >= ((solved_max * 3 + 9) // 10):
           color = color_theme[tier_name][3]
-      elif (solved_dict[now_in_loop]) >= ((solved_max * 1 + 9) // 10):
+      elif (solved_dict[now_in_loop]) >= ((solved_max * 1 + 9) // 10) and (solved_dict[now_in_loop]) > 1:
           color = color_theme[tier_name][2]
       else:
           color = color_theme[tier_name][1]
