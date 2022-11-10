@@ -3,7 +3,7 @@
 
 ## 주의사항
 - 백준 온라인 저지가 아닌 solved.ac를 기준으로 잔디를 생성합니다.
-- 잔디의 진함 정도가 solved.ac와 다를 수 있습니다.
+- 잔디의 진함 정도가 ~solved.ac와 다를 수 있습니다.~ 이제 solved.ac와 일치합니다!
 
 ## install
 ```
@@ -60,7 +60,7 @@ uvicorn main:app --reload
 ```
 <img src="http://mazandi.herokuapp.com/api?handle={handle}&theme=dark"/>
 ```
-![mazandi profile](http://mazandi.herokuapp.com/api?handle=joonas&theme=dark)
+![mazandi profile](http://mazandi.herokuapp.com/api/random?tier=diamond&theme=dark)
 ![mazandi profile](http://mazandi.herokuapp.com/api/random?tier=platinum&theme=dark)
 
 ![mazandi profile](http://mazandi.herokuapp.com/api?handle=ohhamma&theme=dark)
