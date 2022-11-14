@@ -10,7 +10,7 @@ TIERS = (
 )
 
 THEMES = {
-  # THEME: {TIER: [color1, color2, color3, color4, text-color], ...}
+  # THEME: {TIER: [background-color, color1, color2, color3, color4, text-color], ...}
   'WARM': {
     'border': '#bfbfbf',
     'background': '#fdfdfd',
